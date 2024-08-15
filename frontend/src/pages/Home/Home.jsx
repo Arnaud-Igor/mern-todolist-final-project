@@ -42,9 +42,12 @@ const Home = () => {
   // get all notes
   const getAllNotes = async () => {
     try {
-      const res = await axios.get("http://localhost:3002/api/note/all", {
-        withCredentials: true,
-      });
+      const res = await axios.get(
+        "https://mern-todolist-app-api.vercel.app/api/note/all",
+        {
+          withCredentials: true,
+        }
+      );
 
       if (res.data.success === false) {
         console.log(res.data);
@@ -69,7 +72,7 @@ const Home = () => {
 
     try {
       const res = await axios.delete(
-        "http://localhost:3002/api/note/delete/" + noteId,
+        "https://mern-todolist-app-api.vercel.app/api/note/delete/" + noteId,
         { withCredentials: true }
       );
 
@@ -87,10 +90,13 @@ const Home = () => {
 
   const onSearchNote = async (query) => {
     try {
-      const res = await axios.get("http://localhost:3002/api/note/search", {
-        params: { query },
-        withCredentials: true,
-      });
+      const res = await axios.get(
+        "https://mern-todolist-app-api.vercel.app/api/note/search",
+        {
+          params: { query },
+          withCredentials: true,
+        }
+      );
 
       if (res.data.success === false) {
         console.log(res.data.message);
@@ -115,7 +121,8 @@ const Home = () => {
 
     try {
       const res = await axios.put(
-        "http://localhost:3002/api/note/update-note-pinned/" + noteId,
+        "https://mern-todolist-app-api.vercel.app/api/note/update-note-pinned/" +
+          noteId,
         { isPinned: !noteData.isPinned },
         { withCredentials: true }
       );

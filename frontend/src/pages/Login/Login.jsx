@@ -40,7 +40,7 @@ const Login = () => {
       dispatch(signInStart());
 
       const res = await axios.post(
-        "http://localhost:3002/api/auth/signin",
+        "https://mern-todolist-app-api.vercel.app/api/auth/signin",
         { email, password },
         { withCredentials: true }
       );

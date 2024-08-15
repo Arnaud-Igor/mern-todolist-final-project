@@ -36,7 +36,7 @@ const Signup = () => {
     // sign up api
     try {
       const res = await axios.post(
-        "http://localhost:3002/api/auth/signup",
+        "https://mern-todolist-app-api.vercel.app/api/auth/signup",
         { username: name, email, password },
         { withCredentials: true }
       );
